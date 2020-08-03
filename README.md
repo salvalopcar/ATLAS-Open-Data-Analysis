@@ -1,6 +1,6 @@
 # ATLAS-Open-Data-Analysis
 
-This analysis is based in the release of a new set of proton-proton collision data by the ATLAS Collaboration. The data has been collected by ATLAS detector at Large Hadron Collider (LHC) at a center-of-mass energy #sqrt{s}= 13 TeV during the year 2016 and corresponds to an integrated lminosity of 10 fb^{-1}.
+This analysis is based in the release of a new set of proton-proton collision data by the ATLAS Collaboration. The data has been collected by ATLAS detector at Large Hadron Collider (LHC) at a center-of-mass energy of 13 TeV during the year 2016.
 
 More info about ATLAS Open Data:
 https://atlas.cern/resources/opendata
