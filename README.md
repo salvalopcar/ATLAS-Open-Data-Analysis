@@ -8,4 +8,4 @@ https://atlas.cern/resources/opendata
 Review of the 13 TeV ATLAS Open Data release:
 https://cds.cern.ch/record/2707171?ln=es
 
-The analysis is made with python and ROOT package.
+The analysis is made with ROOT package developed at CERN.
