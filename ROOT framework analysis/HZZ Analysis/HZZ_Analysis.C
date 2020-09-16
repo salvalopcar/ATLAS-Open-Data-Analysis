@@ -1120,7 +1120,7 @@ void HZZ_Analysis () {
   }
 
 
- // INTEGRAL
+ // NUMBER OF EVENTS
 
     float Int_eta_Data = hist_eta_Data -> Integral (0, 10);
     std::cout << "* eta: " << Int_eta_Data << std::endl;
