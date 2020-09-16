@@ -628,7 +628,7 @@ void Hyy_Analysis () {
         TFitResultPtr fit_res_myy1_bkg1 = hist_myy1_Data -> Fit ("myy1_bkg1", "S");
         float chi2_myy1_bkg1 = fit_res_myy1_bkg1 -> MinFcnValue();
         float ndf_myy1_bkg1 = fit_res_myy1_bkg1 -> Ndf();
-        std::cout << "Chi2/ndf para myy1_sigbkg1:" << chi2_myy1_bkg1 / ndf_myy1_bkg1 << std::endl;
+        std::cout << "Chi2/ndf for myy1_sigbkg1:" << chi2_myy1_bkg1 / ndf_myy1_bkg1 << std::endl;
 
 
     // UNCONVERTED PHOTONS
@@ -641,7 +641,7 @@ void Hyy_Analysis () {
         TFitResultPtr fit_res_myy2_bkg1 = hist_myy2_Data -> Fit ("myy2_bkg1", "S");
         float chi2_myy2_bkg1 = fit_res_myy2_bkg1 -> MinFcnValue();
         float ndf_myy2_bkg1 = fit_res_myy2_bkg1 -> Ndf();
-        std::cout << "Chi2/ndf para myy1_sigbkg1:" << chi2_myy2_bkg1 / ndf_myy2_bkg1 << std::endl;
+        std::cout << "Chi2/ndf for myy1_sigbkg1:" << chi2_myy2_bkg1 / ndf_myy2_bkg1 << std::endl;
 
 
   // SIGNAL + BACKGROUND FIT
@@ -659,7 +659,7 @@ void Hyy_Analysis () {
         TFitResultPtr fit_res_myy1_sigbkg1 = hist_myy1_Data -> Fit ("myy1_sigbkg1", "S");
         float chi2_myy1_sigbkg1 = fit_res_myy1_sigbkg1 -> MinFcnValue();
         float ndf_myy1_sigbkg1 = fit_res_myy1_sigbkg1 -> Ndf();
-        std::cout << "Chi2/ndf para myy1_sigbkg1:" << chi2_myy1_sigbkg1 / ndf_myy1_sigbkg1 << std::endl;
+        std::cout << "Chi2/ndf for myy1_sigbkg1:" << chi2_myy1_sigbkg1 / ndf_myy1_sigbkg1 << std::endl;
 
 
     // UNCONVERTED PHOTONS
@@ -675,7 +675,7 @@ void Hyy_Analysis () {
         TFitResultPtr fit_res_myy2_sigbkg1 = hist_myy2_Data -> Fit ("myy2_sigbkg1", "S");
         float chi2_myy2_sigbkg1 = fit_res_myy2_sigbkg1 -> MinFcnValue();
         float ndf_myy2_sigbkg1 = fit_res_myy2_sigbkg1 -> Ndf();
-        std::cout << "Chi2/ndf para myy1_sigbkg1:" << chi2_myy2_sigbkg1 / ndf_myy2_sigbkg1 << std::endl;
+        std::cout << "Chi2/ndf for myy1_sigbkg1:" << chi2_myy2_sigbkg1 / ndf_myy2_sigbkg1 << std::endl;
 
 
   // LEGEND
