@@ -596,7 +596,7 @@ void Hyy_Analysis () {
   }
 
 
-  // INTEGRAL
+  // NUMBER OF EVENTS WHICH PASS THE FINAL EVENT SELECTION CRITERIA
 
     // DATA
 
@@ -620,18 +620,28 @@ void Hyy_Analysis () {
 
     // CONVERTED Y UNCONVERTED PHOTONS
 
-        TF1 *myy1_bkg1 = new TF1 ("myy1_bkg1", "pol3", 105, 160);
+        TF1 *myy1_bkg1 = new TF1 ("myy1_bkg1", "expo", 105, 160);
         myy1_bkg1 -> SetLineColor (kBlue);
         myy1_bkg1 -> SetLineStyle (kDashed);
         hist_myy1_Data -> Fit ("myy1_bkg1","R");
 
+        TFitResultPtr fit_res_myy1_bkg1 = hist_myy1_Data -> Fit ("myy1_bkg1", "S");
+        float chi2_myy1_bkg1 = fit_res_myy1_bkg1 -> MinFcnValue();
+        float ndf_myy1_bkg1 = fit_res_myy1_bkg1 -> Ndf();
+        std::cout << "Chi2/ndf para myy1_sigbkg1:" << chi2_myy1_bkg1 / ndf_myy1_bkg1 << std::endl;
+
 
     // UNCONVERTED PHOTONS
 
-        TF1 *myy2_bkg1 = new TF1("myy2_bkg1", "pol3", 105, 160);
+        TF1 *myy2_bkg1 = new TF1("myy2_bkg1", "expo", 105, 160);
         myy2_bkg1 -> SetLineColor(kBlue);
         myy2_bkg1 -> SetLineStyle (kDashed);
         hist_myy2_Data -> Fit ("myy2_bkg1", "R");
+
+        TFitResultPtr fit_res_myy2_bkg1 = hist_myy2_Data -> Fit ("myy2_bkg1", "S");
+        float chi2_myy2_bkg1 = fit_res_myy2_bkg1 -> MinFcnValue();
+        float ndf_myy2_bkg1 = fit_res_myy2_bkg1 -> Ndf();
+        std::cout << "Chi2/ndf para myy1_sigbkg1:" << chi2_myy2_bkg1 / ndf_myy2_bkg1 << std::endl;
 
 
   // SIGNAL + BACKGROUND FIT
@@ -641,10 +651,15 @@ void Hyy_Analysis () {
         TF1 *myy1_sigbkg1 = new TF1 ("myy1_sigbkg1", "expo + gaus(2)", 105, 160);
         myy1_sigbkg1 -> SetLineColor (kRed);
         myy1_sigbkg1 -> SetParameters (0, 0, 150, 125, 2);
-        myy1_sigbkg1 -> FixParameter (2, 150);
-        myy1_sigbkg1 -> FixParameter (3, 125);
-        myy1_sigbkg1 -> FixParameter (4, 2);
-        hist_myy1_Data -> Fit ("myy1_sigbkg1", "B");
+        myy1_sigbkg1 -> SetParLimits (2, 100, 200);
+        myy1_sigbkg1 -> SetParLimits (3, 120, 130);
+        myy1_sigbkg1 -> SetParLimits (4, 2, 4);
+        hist_myy1_Data -> Fit ("myy1_sigbkg1", "R");
+
+        TFitResultPtr fit_res_myy1_sigbkg1 = hist_myy1_Data -> Fit ("myy1_sigbkg1", "S");
+        float chi2_myy1_sigbkg1 = fit_res_myy1_sigbkg1 -> MinFcnValue();
+        float ndf_myy1_sigbkg1 = fit_res_myy1_sigbkg1 -> Ndf();
+        std::cout << "Chi2/ndf para myy1_sigbkg1:" << chi2_myy1_sigbkg1 / ndf_myy1_sigbkg1 << std::endl;
 
 
     // UNCONVERTED PHOTONS
@@ -652,10 +667,15 @@ void Hyy_Analysis () {
         TF1 *myy2_sigbkg1 = new TF1 ("myy2_sigbkg1", "expo + gausn(2)", 105, 160);
         myy2_sigbkg1 -> SetLineColor (kRed);
         myy2_sigbkg1 -> SetParameters (0, 0, 150, 125, 2);
-        myy2_sigbkg1 -> FixParameter (2, 150);
-        myy2_sigbkg1 -> FixParameter (3, 125);
-        myy2_sigbkg1 -> FixParameter (4, 2);
-        hist_myy2_Data -> Fit ("myy2_sigbkg1", "B");
+        myy2_sigbkg1 -> SetParLimits (2, 100, 200);
+        myy2_sigbkg1 -> SetParLimits (3, 120, 130);
+        myy2_sigbkg1 -> SetParLimits (4, 1, 4);
+        hist_myy2_Data -> Fit ("myy2_sigbkg1", "R");
+
+        TFitResultPtr fit_res_myy2_sigbkg1 = hist_myy2_Data -> Fit ("myy2_sigbkg1", "S");
+        float chi2_myy2_sigbkg1 = fit_res_myy2_sigbkg1 -> MinFcnValue();
+        float ndf_myy2_sigbkg1 = fit_res_myy2_sigbkg1 -> Ndf();
+        std::cout << "Chi2/ndf para myy1_sigbkg1:" << chi2_myy2_sigbkg1 / ndf_myy2_sigbkg1 << std::endl;
 
 
   // LEGEND
