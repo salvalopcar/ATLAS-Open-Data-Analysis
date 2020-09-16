@@ -1120,7 +1120,7 @@ void HZZ_Analysis () {
   }
 
 
- // NUMBER OF EVENTS
+ // NUMBER OF EVENTS WHICH PASS THE FINAL EVENT SELECTION CRITERIA
 
     float Int_eta_Data = hist_eta_Data -> Integral (0, 10);
     std::cout << "* eta: " << Int_eta_Data << std::endl;
